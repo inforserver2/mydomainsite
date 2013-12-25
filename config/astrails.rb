@@ -1,6 +1,6 @@
 safe do
 #  verbose true
-
+  place = "/var/web/mydomain.net"
   local :path => "/backup/mydomain_backups/:kind/:id"
 
 #  s3 do
@@ -88,8 +88,8 @@ safe do
 #    end
 
     archive "mydomain" do
-      files "#{Rails.root}"
-      exclude ["#{Rails.root}/log", "#{Rails.root}/tmp"]
+      files "#{domain}"
+      exclude ["#{domain}/log", "#{domain}/tmp"]
     end
   end
 end
