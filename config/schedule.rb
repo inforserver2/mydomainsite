@@ -14,8 +14,8 @@ set :output, "#{path}/log/cron_log.log"
    command "astrails-safe -v #{path}/config/astrails.rb"
  end
 #
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
+ every 4.days do
+   runner "puts 'oohh yeah'"
+ end
 
 # Learn more: http://github.com/javan/whenever
