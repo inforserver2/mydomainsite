@@ -1,6 +1,6 @@
 safe do
 #  verbose true
-  place = "/var/web/mydomain.net"
+  domain = "/var/web/mydomain.net"
   local :path => "/backup/mydomain_backups/:kind/:id"
 
 #  s3 do
