@@ -1,3 +1,6 @@
+require "whenever/capistrano"
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
 set :application, 'mydomain_net'
 set :repo_url, 'git@github.com:inforserver2/mydomainsite.git'
 
