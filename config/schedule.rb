@@ -9,7 +9,7 @@ set :output, "#{path}/log/cron_log.log"
 #
  every 1.minute do
    command "ls -la"
-   runner "puts User.all"
+   runner "puts 'fuckyou'"
    rake "turn"
    command "astrails-safe -v #{path}/config/astrails.rb"
  end

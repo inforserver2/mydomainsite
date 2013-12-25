@@ -88,8 +88,8 @@ safe do
 #    end
 
     archive "mydomain" do
-      files "/var/web/mydomain.net"
-      exclude ["/var/web/mydomain.net/log", "/var/web/mydomain.net/tmp"]
+      files "#{Rails.root}"
+      exclude ["#{Rails.root}/log", "#{Rails.root}/tmp"]
     end
   end
 end

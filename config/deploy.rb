@@ -1,5 +1,3 @@
-require "whenever/capistrano"
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 set :application, 'mydomain_net'
 set :repo_url, 'git@github.com:inforserver2/mydomainsite.git'
@@ -12,6 +10,8 @@ set :scm, :git
 set :format, :pretty
 set :log_level, :debug
 set :pty, true
+
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 # set :linked_files, %w{config/database.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
