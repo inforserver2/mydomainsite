@@ -40,6 +40,12 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 0.0.23)
+    capistrano-bundler (1.1.1)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2.0)
+    capistrano-rails (1.1.0)
+      capistrano (>= 3.0.0)
+      capistrano-bundler (>= 1.0.0)
     chronic (0.10.2)
     cloudfiles (1.5.0.3)
       json
@@ -148,6 +154,7 @@ PLATFORMS
 DEPENDENCIES
   astrails-safe
   capistrano
+  capistrano-rails (~> 1.1.0)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
   jquery-rails

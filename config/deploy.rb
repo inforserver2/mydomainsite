@@ -1,10 +1,18 @@
 set :application, 'mydomain_net'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :repo_url, 'git@github.com:inforserver2/mydomainsite.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-# set :deploy_to, '/var/www/my_app'
-# set :scm, :git
+#set :user, "max"
+#set :group, "max"
+#set :use_sudo, false
+set :deploy_to, '/var/web/uol.com'
+set :scm, :git
+
+set :deploy_via, :copy
+set :copy_strategy, :export
+
+
 
 # set :format, :pretty
 # set :log_level, :debug
@@ -14,7 +22,7 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-# set :keep_releases, 5
+ set :keep_releases, 5
 
 namespace :deploy do
 

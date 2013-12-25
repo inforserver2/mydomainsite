@@ -50,4 +50,5 @@ end
 
  group :development do
   gem "capistrano"
+  gem 'capistrano-rails', '~> 1.1.0'
  end
