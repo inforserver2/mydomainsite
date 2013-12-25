@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MydomainNet</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+<div id="menu">
+  <h1 id="">Links</h1>
+  <ul>
+    <li><%= link_to "Site Users", users_path %></li>
+    <li><%= link_to "Admin Users", admin_users_path %></li>
+    <li><%= link_to "Office Blogs", office_blogs_path %></li>
+  </ul>
+</div>
+
+</body>
+</html>

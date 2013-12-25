@@ -1,0 +1,27 @@
+<h1>Listing office_blogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @office_blogs.each do |office_blog| %>
+      <tr>
+        <td><%= office_blog.title %></td>
+        <td><%= link_to 'Show', office_blog %></td>
+        <td><%= link_to 'Edit', edit_office_blog_path(office_blog) %></td>
+        <td><%= link_to 'Destroy', office_blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blog', new_office_blog_path %>
