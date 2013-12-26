@@ -54,3 +54,5 @@ end
   gem 'capistrano-rvm', '~> 0.1.0'
   gem "sshkit", "~> 1.2.0"
  end
+
+ gem "rspec-rails"
