@@ -1,5 +1,6 @@
 set :stage, :staging
 set :deploy_to, '/var/web/mytest.com'
+set :rvm_ruby_version, 'ruby-2.0.0-p353@rails4'
 
 # Simple Role Syntax
 # ==================
