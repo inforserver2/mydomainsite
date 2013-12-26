@@ -1,4 +1,5 @@
 set :stage, :staging
+set :deploy_to, '/var/web/mytest.com'
 
 # Simple Role Syntax
 # ==================

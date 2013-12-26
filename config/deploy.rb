@@ -41,3 +41,17 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 
 end
+
+namespace :custom do
+
+  desc 'Run commands'
+  task :console do
+    on roles(:web) do
+       within release_path do
+         execute :rake, 'tmp:clear'
+       end
+    end
+  end
+
+end
+
