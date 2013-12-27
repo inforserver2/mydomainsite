@@ -1,0 +1,28 @@
+<h6>Sponsor: <%= @sponsor %></h6>
+<h1>Listing contacts</h1>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.message %></td>
+        <td><%= link_to 'Show', contact_path(contact, sponsor:"mm") %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact, sponsor:"xxx") %></td>
+        <td><%= link_to 'Destroy', contact_path(contact, sponsor:"ok"), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>

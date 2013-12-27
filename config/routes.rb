@@ -1,19 +1,26 @@
 MydomainNet::Application.routes.draw do
-  namespace :office do
-    resources :blogs
-  end
+
 
   namespace :admin do
     resources :users
   end
 
-  resources :users
+  get "/(:sponsor)", to:  "users#index", as: :root, :constraints => { :sponsor => /[\w+\.]+/ }
+  scope "/:sponsor", :constraints => { :sponsor => /[\w+\.]+/ } do
+    resources :users
+    resources :contacts
+    namespace :office do
+      resources :blogs
+    end
+  end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#index'
+  #root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
