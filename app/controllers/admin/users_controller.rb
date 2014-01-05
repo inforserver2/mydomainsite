@@ -1,6 +1,7 @@
 class Admin::UsersController < ApplicationController
 
   skip_before_action :check_sponsor
+  before_filter :authorize
 
 #  force_ssl
   before_action :set_admin_user, only: [:show, :edit, :update, :destroy]

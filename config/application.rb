@@ -18,7 +18,29 @@ module MydomainNet
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = :en
     config.middleware.use Rack::SslEnforcer, :only => '/admin', :ignore => %r{/assets}, :strict => true
+
+
+
+# Don't care if the mailer can't send
+config.action_mailer.raise_delivery_errors = true
+
+# Change mail delvery to either :smtp, :sendmail, :file, :test
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address: "localhost",
+  port: 25,
+  domain: "domain.net",
+  authentication: "plain",
+  enable_starttls_auto: false,
+  user_name: "user1@domain.net",
+  password: "vtr512"
+}
+
+# Specify what domain to use for mailer URLs
+config.action_mailer.default_url_options = {host: "www.mydomain.net"}
+
+
   end
 end

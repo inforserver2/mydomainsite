@@ -8,6 +8,27 @@
 </head>
 <body>
 
+  <div id="languages">
+Language:
+<%= link_to_unless_current "English", locale: "en" %> |
+<%= link_to_unless_current "Portuguese", locale: "pt-BR" %> |
+<%= link_to_unless_current "Español", locale: "es" %>
+<h1><%= t "title" %></h1>
+<em><%= t "description" %></em>
+</div>
+
+
+<div id="login">
+  <% if current_user %>
+  Logged in as <%= current_user.email %>.
+  <%= link_to "Log Out", logout_path %>
+<% else %>
+  <%= link_to "Sign Up", signup_path %> or
+  <%= link_to "Log In", login_path %>
+<% end %>
+</div>
+
+
 <%= yield %>
 
 <div id="menu">
@@ -24,3 +45,4 @@
 <%#= debug session %>
 <%= debug flash %>
 <%= debug params %>
+<%= debug I18n.locale %>

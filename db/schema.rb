@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131226231212) do
+ActiveRecord::Schema.define(version: 20131227231841) do
 
   create_table "admin_users", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "binaries", force: true do |t|
+    t.integer  "sponsor_id"
+    t.string   "my_side"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -35,6 +42,12 @@ ActiveRecord::Schema.define(version: 20131226231212) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
 end

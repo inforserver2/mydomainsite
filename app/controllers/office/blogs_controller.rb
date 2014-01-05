@@ -1,5 +1,6 @@
 class Office::BlogsController < ApplicationController
   before_action :set_office_blog, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize
 
   # GET /office/blogs
   # GET /office/blogs.json

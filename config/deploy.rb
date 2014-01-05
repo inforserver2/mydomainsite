@@ -4,7 +4,7 @@ set :repo_url, 'git@github.com:inforserver2/mydomainsite.git'
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-set :deploy_to, '/var/web/uol.com'
+set :deploy_to, '/var/web/production.gamblerserver.com'
 set :scm, :git
 
 set :format, :pretty

@@ -1,6 +1,6 @@
 set :stage, :staging
-set :deploy_to, '/var/web/mytest.com'
-set :rvm_ruby_version, 'ruby-2.0.0-p353@rails4'
+set :deploy_to, '/var/web/staging.gamblerserver.com'
+set :rvm_ruby_version, 'ruby-head@rails4'
 
 # Simple Role Syntax
 # ==================
@@ -18,7 +18,8 @@ set :rvm_ruby_version, 'ruby-2.0.0-p353@rails4'
 # something that quacks like a hash can be used to set
 # extended properties on the server.
 #server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
-server 'localhost', user: 'max', roles: %w{app web db}
+#server 'localhost', user: 'max', roles: %w{app web db}
+server 'staging.gamblerserver.com', user: 'deploy', roles: %w{app web db}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options

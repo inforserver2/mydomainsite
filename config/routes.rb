@@ -1,20 +1,30 @@
 MydomainNet::Application.routes.draw do
 
 
+  get "password_resets/new"
+  get "sessions/new"
   namespace :admin do
     resources :users
   end
 
   get "/(:sponsor)", to:  "users#index", as: :root, :constraints => { :sponsor => /[\w+\.]+/ }
   scope "/:sponsor", :constraints => { :sponsor => /[\w+\.]+/ } do
+
+    get 'signup', to: 'users#new', as: 'signup'
+    get 'login', to: 'sessions#new', as: 'login'
+    get 'logout', to: 'sessions#destroy', as: 'logout'
+
+    resources :users
+    resources :sessions
+    resources :password_resets
+
     resources :users
     resources :contacts
     namespace :office do
       resources :blogs
     end
   end
-
-
+ # get 'language/:id', to: 'application#set_lang', as: "set_language"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
